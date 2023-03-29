@@ -1,0 +1,36 @@
+{% extends 'front/template_page.html.twig' %}
+
+{% block title %}
+	Bienvenue chez Cerfunos
+{% endblock %}
+	{% block titre %}Les Incontournables du moment
+	{% endblock %}
+
+{% block content %}
+	{% include "front/page/components/catalogue.html.twig" %}
+{% endblock %}
+
+{% block text %}
+	<div class='container-fluid mt-5 py-5' id='custom_text'>
+		<div class='container text-center'>
+			<h2 class="my-3 pb-4">Les plus grandes marques de fournitures de bureau au meilleur prix</h2>
+			<p class="my-3">Cerfunos est une enseigne de distribution en libre-service de papeterie et fournitures de bureau, fournitures scolaires et matériel de bureau.</p>
+			<p class="my-3">
+				De la rentrée des classes avec les calculatrices Casio, les agendas Exacompta et les cahiers Clairefontaine aux fournitures de bureau, Cerfunos vous apporte tout le matériel que vous recherchez. Nous avons également pensé aux services généraux en proposant toutes les fournitures dont vous pouvez avoir besoin, que ce soit au niveau de la sécurité, des tampons spécifiques ou encore du matériel de manutention.</p>
+			<p class="my-3">
+				Visez l’excellence !</p>
+		</div>
+	</div>
+{% endblock %}
+
+{% block Fournisseur %}
+	<div class="bg-white" id="carousel1">
+	{% for fournisseur in fournisseurs %}
+		<div class="item p-5 align-items-center d-flex justify-content-center bg-white" style="transform: none;border: none; box-shadow: none">
+			<div class="row g-0">
+					<img class="img-fluid rounded-start" src="{{fourdir ~ fournisseur.image}}" alt="{{fournisseur.nom}}">
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+{% endblock %}

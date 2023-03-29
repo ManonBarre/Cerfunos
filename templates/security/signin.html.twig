@@ -1,0 +1,25 @@
+{% extends 'front/template_page.html.twig' %}
+{% block title %}Cerfunos | Inscription
+{% endblock %}
+{% block titre %}Inscription
+{% endblock %}
+{% block content %}
+<div class="text-white">
+</div>
+    <section class="text-center text-white">
+        <div class="card mx-4 mx-md-5 shadow-5-strong bg-dark " style="">
+            <div class="card-body py-5 px-md-5">
+
+                {{ form_start(form) }}
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12">
+                        {{form(form)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
+

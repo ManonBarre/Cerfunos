@@ -1,0 +1,18 @@
+{% extends 'admin/template.html.twig' %}
+
+{% block title %}
+	Editer un fournisseur
+{% endblock %}
+{% block titre %}
+	Editer un fournisseur
+{% endblock %}
+
+{% block body %}
+	<div class='d-flex justify-content-center'>
+	{% if fournisseur.image %}
+	<img src="{{ dir ~ fournisseur.image}}">
+	{% else %}
+	<span class="display-4 alert alert-warning">Aucun logo n'a été ajoutée pour ce fournisseur</span>
+	{% endif %}
+	</div>
+	{{ form(formFournisseur) }}{% endblock %}

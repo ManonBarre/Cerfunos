@@ -1,0 +1,53 @@
+{% extends 'admin/template.html.twig' %}
+
+{% block title %}
+	Consulter une commande
+{% endblock %}
+
+{% block titre %}
+	Consulter une commande
+{% endblock %}
+
+{% block body %}
+	<a class='float-right'href="{{path('app_admin_commande')}}">Retourner à la liste des commandes</a>
+	<div class="example-wrapper p-5">
+		<div class="card m-5" style="width: 24rem;">
+			<div class="card-body ">
+				<h5 class="card-title ">Numéro de commande :
+			{{commandes.id}} </h5>
+				<h6 class="card-subtitle mb-2 text-muted ">Bénéficiaire : {{commandes.client}}</h6>
+				<p class="card-text ">Adresse de livraison : {{ client.adresse}}</p>
+				<p class="card-text ">Montant total de la commande : {{ commandes.montant}} €</p>
+			</div>
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Produit</th>
+					<th scope="col">Quantité</th>
+					<th scope="col">Prix</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% for contenu in contenus %}
+					<tr scope="row">
+						<td>
+							{{contenu.getProduits}}
+						</td>
+						<td>
+							{{contenu.quantite}}
+						</td>
+
+						<td>
+							{{contenu.prix}}
+						</td>
+
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+{% endblock %}
